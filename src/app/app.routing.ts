@@ -10,6 +10,10 @@ import { RoutingWithResolveComponent } from './routing-with-resolve/routing-with
 
 const routes: Routes = [
   {
+    path: 'home',
+    component: InterceptorPlaygroundComponent
+  },
+  {
     path: 'route-change',
     component: RouteChangeComponent
   }, {
@@ -21,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: InterceptorPlaygroundComponent,
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

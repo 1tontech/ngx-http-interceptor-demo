@@ -1,35 +1,26 @@
 <md-sidenav-container>
   <md-sidenav mode="side" align="start" opened="true">
-    <div fxLayout="column">
-      <md-button-toggle-group vertical="true">
-        <md-button-toggle (click)="load()" value="load">
-          Load all Kubric's movies
-        </md-button-toggle>
-        <md-button-toggle (click)="retryAndFail()" value="retryAndFail">
-          Retry & fail
-        </md-button-toggle>
-        <md-button-toggle (click)="shortCircuitWithNoResponse()" value="shortCircuitWithNoResponse">
-          Short circuit
-        </md-button-toggle>
-        <md-button-toggle (click)="shortCircuitAndGetMockResponse()" value="shortCircuitAndGetMockResponse1">
-          Short circuit & Get mock response
-        </md-button-toggle>
-        <md-button-toggle (click)="simulateError()" value="simulateError">
-          Simulate error
-        </md-button-toggle>
-        <md-button-toggle (click)="simulateErrorAndGetMockResponse()" value="simulateErrorAndGetMockResponse">
-          Simulate error & Get mock response
-        </md-button-toggle>
-      </md-button-toggle-group>
-    </div>
+    <md-button-toggle-group name="features" vertical="true">
+      <md-button-toggle (click)="load()" value="load">Load all Kubric's movies</md-button-toggle>
+      <md-button-toggle (click)="retryAndFail()" value="retryAndFail">Retry (actual http) request & fail</md-button-toggle>
+      <md-button-toggle (click)="shortCircuitWithNoResponse()" value="shortCircuitWithNoResponse">Short circuit</md-button-toggle>
+      <md-button-toggle (click)="shortCircuitAndGetMockResponse()" value="shortCircuitAndGetMockResponse1">Short circuit & Get mock response</md-button-toggle>
+      <md-button-toggle (click)="simulateError()" value="simulateError">Simulate error</md-button-toggle>
+      <md-button-toggle (click)="simulateErrorAndGetMockResponse()" value="simulateErrorAndGetMockResponse">Simulate error & Get mock response</md-button-toggle>
+    </md-button-toggle-group>
   </md-sidenav>
   <div style="min-height: 600px; margin: 20px;">
+    <section *ngIf="!showAllMovies && !retryFailure && !shortCircuitedNoResponse && !shortCircuitedWithMockResponse && !errorUnhandled && !errorHandledWithMockResponse">
+      <h1>&lt;-- Click on one of the options from the left navigation</h1>
+    </section>
     <div *ngIf="showAllMovies">
       <h1>All kubrics movies</h1>
-      <md-card *ngFor="let movie of movies">
-        <md-card-title>{{movie.name}}</md-card-title>
-        <md-card-subtitle>{{movie.year}} {{movie.documentary ? 'documentary' : 'movie'}}</md-card-subtitle>
-      </md-card>
+      <section>
+        <md-card *ngFor="let movie of movies">
+          <md-card-title>{{movie.name}}</md-card-title>
+          <md-card-subtitle>{{movie.year}} {{movie.documentary ? 'documentary' : 'movie'}}</md-card-subtitle>
+        </md-card>
+      </section>
     </div>
     <div *ngIf="retryFailure">
       <h2>Retried final step of interceptor chain (actual http request); but failed</h2>

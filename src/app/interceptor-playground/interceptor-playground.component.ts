@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { InterceptorPlaygroundService } from '../shared/interceptor-playground.service';

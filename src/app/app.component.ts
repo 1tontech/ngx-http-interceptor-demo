@@ -7,15 +7,14 @@ import { ProgressBarService } from './shared/progress-bar.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit, OnDestroy {
 
   private routerEventSubscription: Subscription;
 
   tabs = [{
-    url: '/',
+    url: '/home',
     name: 'Home'
   }, {
     url: '/route-change',
