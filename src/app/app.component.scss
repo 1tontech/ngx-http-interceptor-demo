@@ -1,0 +1,26 @@
+.header {
+    background-color: darkslategray;
+     ::after {
+        clear: both;
+    }
+}
+
+ul {
+    margin: 0;
+    list-style: none;
+    padding: 10px;
+}
+
+li {
+    padding: 10px;
+    margin: 0 10px;
+    float: left;
+    color: white;
+     :hover {
+        background-color: white;
+        color: gray;
+    }
+    a {
+        text-decoration-style: none;
+    }
+}

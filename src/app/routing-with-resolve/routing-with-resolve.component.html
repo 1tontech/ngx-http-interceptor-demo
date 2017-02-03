@@ -1,0 +1,7 @@
+Kubric's movies/documentaries from 1950s
+<div *ngIf="movies">
+  <md-card *ngFor="let movie of movies">
+    <md-card-title>{{movie.name}}</md-card-title>
+    <md-card-subtitle>{{movie.year}} {{movie.documentary ? 'documentary' : 'movie'}}</md-card-subtitle>
+  </md-card>
+</div>
