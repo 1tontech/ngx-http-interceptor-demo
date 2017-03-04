@@ -6247,9 +6247,9 @@ ws@^1.0.1:
     options ">=0.0.5"
     ultron "1.0.x"
 
-x-ng2-http-interceptor@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/x-ng2-http-interceptor/-/x-ng2-http-interceptor-0.14.0.tgz#09177511c3ebc29187c355b5e8638ac3ff5e5a68"
+x-ng2-http-interceptor@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/x-ng2-http-interceptor/-/x-ng2-http-interceptor-0.15.0.tgz#2542640a355a931d25e7dae4f7a5c0a3974438e4"
 
 xdg-basedir@^2.0.0:
   version "2.0.0"

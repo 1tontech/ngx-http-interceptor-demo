@@ -19,7 +19,7 @@ import {
 @Injectable()
 export class RequestRetringRealResponseTransformer implements RealResponseObservableTransformer {
 
-  tranform(response$: Observable<Response>, request: InterceptorRequest,
+  transform(response$: Observable<Response>, request: InterceptorRequest,
     http: HttpDirect, interceptorService: InterceptorService): Observable<Response> {
     return response$.catch(response => {
       const url: string = request.url instanceof Request ? (request.url as Request).url : request.url as string;
